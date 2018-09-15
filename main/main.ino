@@ -1,18 +1,39 @@
 #include <Adafruit_NeoPixel.h>
 
-// Values
+// Pins
 int pin_strobe = 2;
 int pin_reset = 3;
 int pin_dc_out = A0;
 
-
+// Values
+int probe[7]; // 63Hz, 160Hz, 400Hz, 1kHz, 2.5kHz, 6.25kHz, 16kHz
+int pixelArray[89]; //Ilosc pixeli (WS2812)
 
 void setup() {
   init_MSGEQ7(DC_OUT, STROBE, RESET);
 }
 
+
+// Reset Pulse Width 100ns min
+void tr() { 
+  digitalWrite(pin_reset, HIGH); 
+  digitalWrite(pin_reset, LOW);  
+}
+
+// Strobe Pulse 18us min
+void ts {
+      delayMicroseconds(30);  
+}
+
 void loop() {
-  // put your main code here, to run repeatedly:
+  tr();
+  for (int i = 0; i < 7; i++)
+    {
+      digitalWrite(pin_strobe, LOW);
+      ts();
+      probe[i] = analogRead(pin_dc_out);
+      digitalWrite(pin_strobe, HIGH);
+    }
 }
 
 
@@ -24,18 +45,4 @@ void init_MSGEQ7(int p_out, int p_strobe, int p_reset) {
   analogReference(DEFAULT);
   digitalWrite(p_reset, LOW);
   digitalWrite(p_strobe, HIGH);
-}
-
-int getData_MSGEQ7(int p_out, int p_strobe, int p_reset) {
-  int data[7];
-  digitalWrite(p_reset, HIGH);
-  digitalWrite(p_reset, LOW);
-  for (int i = 0; i < 7; i++)
-    {
-      digitalWrite(p_strobe, LOW);
-      delayMicroseconds(30); // to allow the output to settle
-      data[i] = analogRead(p_out);
-      digitalWrite(p_strobe, HIGH);
-    }
-    return data;
 }

@@ -5,11 +5,11 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
-Date ""
-Rev ""
-Comp ""
-Comment1 ""
+Title "GraphicEqualizer"
+Date "2018-09-16"
+Rev "1.0"
+Comp "Michał Krzyżanowski"
+Comment1 "Graphic equalizer with using MSGEQ7"
 Comment2 ""
 Comment3 ""
 Comment4 ""
@@ -239,4 +239,81 @@ Wire Wire Line
 	5650 4450 5750 4450
 Wire Wire Line
 	5750 4450 5750 4550
+$Comp
+L Device:R_POT RV?
+U 1 1 5B9E819D
+P 6850 3600
+F 0 "RV?" V 6643 3600 50  0000 C CNN
+F 1 "R_POT" V 6734 3600 50  0000 C CNN
+F 2 "" H 6850 3600 50  0001 C CNN
+F 3 "~" H 6850 3600 50  0001 C CNN
+	1    6850 3600
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_POT RV?
+U 1 1 5B9E81ED
+P 7350 3600
+F 0 "RV?" V 7143 3600 50  0000 C CNN
+F 1 "R_POT" V 7234 3600 50  0000 C CNN
+F 2 "" H 7350 3600 50  0001 C CNN
+F 3 "~" H 7350 3600 50  0001 C CNN
+	1    7350 3600
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_POT RV?
+U 1 1 5B9E86DE
+P 7850 3600
+F 0 "RV?" V 7643 3600 50  0000 C CNN
+F 1 "R_POT" V 7734 3600 50  0000 C CNN
+F 2 "" H 7850 3600 50  0001 C CNN
+F 3 "~" H 7850 3600 50  0001 C CNN
+	1    7850 3600
+	0    1    1    0   
+$EndComp
+$Comp
+L MCU_Microchip_ATmega:ATmega8A-AU U?
+U 1 1 5B9E9343
+P 3150 5000
+F 0 "U?" H 3150 6678 50  0000 C CNN
+F 1 "ATmega8A-AU" H 3150 6587 50  0000 C CNN
+F 2 "Package_QFP:TQFP-32_7x7mm_P0.8mm" H 3150 5000 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/Microchip%208bit%20mcu%20AVR%20ATmega8A%20data%20sheet%2040001974A.pdf" H 3150 5000 50  0001 C CNN
+	1    3150 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5B9E94B3
+P 2800 6900
+F 0 "#PWR?" H 2800 6650 50  0001 C CNN
+F 1 "GND" H 2805 6727 50  0000 C CNN
+F 2 "" H 2800 6900 50  0001 C CNN
+F 3 "" H 2800 6900 50  0001 C CNN
+	1    2800 6900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5B9E94D6
+P 3450 6850
+F 0 "#PWR?" H 3450 6600 50  0001 C CNN
+F 1 "GND" H 3455 6677 50  0000 C CNN
+F 2 "" H 3450 6850 50  0001 C CNN
+F 3 "" H 3450 6850 50  0001 C CNN
+	1    3450 6850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Crystal Y?
+U 1 1 5B9E9546
+P 2000 4100
+F 0 "Y?" H 2000 4368 50  0000 C CNN
+F 1 "Crystal" H 2000 4277 50  0000 C CNN
+F 2 "" H 2000 4100 50  0001 C CNN
+F 3 "~" H 2000 4100 50  0001 C CNN
+	1    2000 4100
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
